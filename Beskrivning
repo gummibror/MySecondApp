@@ -1,0 +1,12 @@
+Detta är en app som har 2 funktioner. en kompass och en accelerometer. för att bygga denna användes stora delar av koden i den kompassguiden som länkades i kursen.
+https://developer.android.com/training/basics/firstapp/index.html
+sen bröt jag upp den grejen till 2 vyer en "startskärm" som kopplade till kompassen. sedan la jag till layouten för accelerometern. 
+
+själva accelerometern kollade på denna https://www.youtube.com/watch?v=pkT7DU1Yo9Q för att förstå.
+
+vibrationen i kompassen hittade jag i denna videon. https://www.youtube.com/watch?v=sOwqYNdi_x8 
+ jag tog de delarna som va nödvändiga för mig och la in där de passade. kände efter lite olika vibrationslängder. tyckte defaultstyrkan va rätt bra.
+
+Jag är lite sur på mig själv för jag vet själv inte exakt vad jag har ändrat för byggde lite under hela tiden och tog delar. så kan inte säga "denna rad kod är kopierad".
+
+
