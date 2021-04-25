@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MySecondApp</string>
+    <string name="starta_om">Starta om</string>
+    <string name="kompassn_l">kompassnål</string>
+    <string name="back">Back</string>
+    <string name="g2_see_how_fast">G2 see how fast</string>
+    <string name="compass">Compass</string>
+    <string name="textview">TextView</string>
+    <string name="hejsan_verkar_funka">HEjsan verkar funka</string>
+</resources>
