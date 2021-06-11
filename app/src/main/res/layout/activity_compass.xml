@@ -8,24 +8,30 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="187dp"
-        android:layout_height="213dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="236dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="231dp"
         android:contentDescription="@string/kompassn_l"
         android:onClick="backButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/needle" />
+        app:layout_constraintVertical_bias="0.926"
+        app:srcCompat="@drawable/compass" />
 
     <Button
         android:id="@+id/Tillbaks"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginStart="153dp"
+        android:layout_marginLeft="153dp"
+        android:layout_marginBottom="88dp"
         android:onClick="backButton"
         android:text="Tillbaks"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -41,5 +47,37 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="52dp"
+        android:layout_height="44dp"
+        app:srcCompat="@drawable/n"
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <ImageView
+        android:id="@+id/imageViewS"
+        android:layout_width="37dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/s"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="496dp" />
+
+    <ImageView
+        android:id="@+id/imageViewE"
+        android:layout_width="24dp"
+        android:layout_height="35dp"
+        app:srcCompat="@drawable/e"
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="378dp" />
+
+    <ImageView
+        android:id="@+id/imageViewV"
+        android:layout_width="29dp"
+        android:layout_height="37dp"
+        app:srcCompat="@drawable/v"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="376dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
