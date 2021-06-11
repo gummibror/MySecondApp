@@ -13,12 +13,14 @@ import android.hardware.Sensor;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
 
 public class CompassActivity extends AppCompatActivity implements SensorEventListener{
 
@@ -64,6 +66,7 @@ public class CompassActivity extends AppCompatActivity implements SensorEventLis
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
        // circle = calcCircle(imageView2.getHeight()/2, (int) imageView2.getX() + (imageView2.getWidth()/2),(int) imageView2.getY() +(imageView2.getHeight()/2));
+
 
 
         sensorAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);

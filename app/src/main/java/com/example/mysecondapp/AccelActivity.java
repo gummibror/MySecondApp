@@ -10,9 +10,15 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.hardware.SensorManager;
 import android.hardware.Sensor;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import android.speech.tts.TextToSpeech;
+
+import java.util.Locale;
 
 public class AccelActivity extends AppCompatActivity {
 
@@ -25,6 +31,8 @@ public class AccelActivity extends AppCompatActivity {
     private  TextView Yaxis;
     private  TextView Zaxis;
 
+    private TextToSpeech tTS;
+    private boolean flipped = false;
     private RelativeLayout layout;
 
     @Override
@@ -45,6 +53,24 @@ public class AccelActivity extends AppCompatActivity {
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         sensorAccelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        tTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS){
+                    int result = tTS.setLanguage(Locale.ENGLISH);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+
+                        Log.e("TTS", "Language not supported");
+                    } else {
+                        Log.e("TTS", "TTS is working");
+                    }
+                }else{
+                    Log.e("TTS", "Initialization failed");
+                }
+
+            }
+        });
 
         SensorEventListener sensorEventListenerAccelerometer = new SensorEventListener() {
             @Override
@@ -79,9 +105,17 @@ public class AccelActivity extends AppCompatActivity {
                 }else if(zAbs > xAbs && zAbs >yAbs){
                     if(Z > 0 && zAbs > 1){
                         riktning.setText("På g framåt");
+                        if (flipped){
+                            tTS.speak("Thank you", TextToSpeech.QUEUE_ADD, null);
+                            flipped = !flipped;
+                        }
                         layout.setBackgroundColor(Color.WHITE);
                     }else if(Z < 0 && zAbs > 1){
                         riktning.setText("På g bakåt");
+                        if(!flipped) {
+                            tTS.speak("Woops, I'm upside down", TextToSpeech.QUEUE_ADD, null);
+                            flipped = !flipped;
+                        }
                         layout.setBackgroundColor(Color.GRAY);
                     }
                 }else{
@@ -110,6 +144,7 @@ public class AccelActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
 
         startActivity(intent);
+        finish();
     }
 
 }
